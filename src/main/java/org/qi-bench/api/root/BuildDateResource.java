@@ -23,21 +23,21 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Path("/version")
-public class VersionResource {
+@Path("/build-date")
+public class BuildDateResource {
 
-    public VersionResource() {
+    public BuildDateResource() {
     }
 
         // Handle the version request. If there is an explicit request for JSON in an accept
         //  header then honor the request otherwise return XML as the default.
    @GET
-   public StreamingOutput VersionXmlInterface(final @HeaderParam("accept") @DefaultValue("header") String HPValue) {
+   public StreamingOutput BuildDateXmlInterface(final @HeaderParam("accept") @DefaultValue("header") String HPValue) {
         if (HPValue.equals("application/json")) {   // The only way to get JSON is explicit request in an accept header
             return new StreamingOutput() {
                 public void write(OutputStream outputStream) throws IOException, WebApplicationException {
                     PrintStream writer = new PrintStream(outputStream);
-                    writer.println("{\"qi-bench-api\": { \"version\": \"" + RESTproperties.version + "\" }}");
+                    writer.println("{\"qi-bench-api\": { \"buildDate\": \"" + RESTproperties.buildDate + "\" }}");
                 }
             };
         }
@@ -45,7 +45,7 @@ public class VersionResource {
             public void write(OutputStream outputStream) throws IOException, WebApplicationException {
                 PrintStream writer = new PrintStream(outputStream);
                 writer.println("<qi-bench-api>");
-                writer.println("    <version>" + RESTproperties.version + "</version>");
+                writer.println("    <buildDate>" + RESTproperties.buildDate + "</buildDate>");
                 writer.println("</qi-bench-api>");
             }
         };

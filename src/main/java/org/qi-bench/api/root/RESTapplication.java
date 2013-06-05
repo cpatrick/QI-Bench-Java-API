@@ -10,7 +10,7 @@ public class RESTapplication extends Application {
    private Set<Object> singletons = new HashSet<Object>();
 
    public RESTapplication() {
-      singletons.add(new RESTresources());
+      singletons.add(new BuildDateResource());
       singletons.add(new VersionResource());
    }
 

@@ -5,10 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.qi-bench.api</groupId>
     <artifactId>root</artifactId>
-    <version>1.0</version>
+    <version>0.7.0</version>
     <packaging>war</packaging>
     <name>ROOT</name>
     <description/>
+
+    <properties>
+        <timestamp>${maven.build.timestamp}</timestamp>
+        <maven.build.timestamp.format>yyy-MM-dd HH:mm</maven.build.timestamp.format>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -17,6 +22,14 @@
             <version>3.0-beta-5</version>
             <scope>provided</scope>
         </dependency>
+<!-- 
+        <dependency>
+            <groupId>com.wordnik</groupId>
+            <artifactId>swagger-jaxrs_2.9.1</artifactId>
+            <version>1.2.1</version>
+            <scope>compile</scope>
+        </dependency>
+ -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -95,5 +108,11 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
 </project>
