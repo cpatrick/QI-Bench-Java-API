@@ -1,6 +1,7 @@
 package org.qi_bench.api.root;
 
-import java.io.FileInputStream;
+
+import java.io.InputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -16,10 +17,24 @@ public class RESTproperties {
 
     private static void loadProperties() {
         Properties restProperties = new Properties();
+        InputStream in = null;
+
         try {
-            restProperties.load(new FileInputStream("target/classes/REST.properties"));
+                // See http://www.mkyong.com/java/java-properties-file-examples/ example 3
+                //  for the source of the following line. The "magic" seems to be the call
+                //  to "getClassLoader()" without it the method does not work.
+            in = RESTproperties.class.getClassLoader().getResourceAsStream("REST.properties");
+            restProperties.load(in);
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            if (in != null) {
+                try{
+                    in.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         buildDate = restProperties.getProperty("buildDate");
         version   = restProperties.getProperty("version");
