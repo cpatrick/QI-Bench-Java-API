@@ -11,6 +11,7 @@ public class RESTapplication extends Application {
 
    public RESTapplication() {
       singletons.add(new BuildDateResource());
+      singletons.add(new SwaggerBase());
       singletons.add(new VersionResource());
    }
 
