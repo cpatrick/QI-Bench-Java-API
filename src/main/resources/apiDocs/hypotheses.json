@@ -1,0 +1,22 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"${apiBase}",
+    "resourcePath":"/hypotheses",
+    "apis":[
+        {
+            "path":"/hypotheses",
+            "description":"Documents operations on a collection of hypotheses",
+            "operations":[
+                {
+                    "httpMethod":"GET",
+                    "summary":"Returns a list of at least some of the hypotheses collection.",
+                    "responseClass":"void",
+                    "nickname":"getHypotheses",
+                    "notes": "NOT YET IMPLEMENTED"
+                }
+            ]
+        }
+    ],
+    "models":{}
+}

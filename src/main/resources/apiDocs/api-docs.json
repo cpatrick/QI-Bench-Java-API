@@ -3,7 +3,14 @@
     "swaggerVersion":"1.1",
     "basePath":"${apiBase}",
     "apis":[
-        {"path":"/api-docs/build-date","description":"documents the build-date call"},
-        {"path":"/api-docs/version","description":"documents the version call"}
+        {"path": "/api-docs/assertions", "description": "documents the operations on a collection of assertions"},
+        {"path": "/api-docs/build-date", "description": "documents the build-date call"},
+        {"path": "/api-docs/hypotheses", "description": "documents the operations on a collection of hypotheses"},
+        {"path": "/api-docs/instances", "description": "documents the operations on a collection of instances"},
+        {"path": "/api-docs/observations", "description": "documents the operations on a collection of observations"},
+        {"path": "/api-docs/ontologies", "description": "documents the operations on a collection of ontologies"},
+        {"path": "/api-docs/triple", "description": "documents the operations on a triple"},
+        {"path": "/api-docs/triples", "description": "documents the operations on a collection of triples"},
+        {"path": "/api-docs/version", "description": "documents the version call"}
     ]
 }

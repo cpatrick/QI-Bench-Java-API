@@ -1,0 +1,22 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"${apiBase}",
+    "resourcePath":"/assertions",
+    "apis":[
+        {
+            "path":"/assertions",
+            "description":"Documents operations on a collection of assertions",
+            "operations":[
+                {
+                    "httpMethod":"GET",
+                    "summary":"Returns a list of at least some of the assertions collection.",
+                    "responseClass":"void",
+                    "nickname":"getAssertions",
+                    "notes": "NOT YET IMPLEMENTED"
+                }
+            ]
+        }
+    ],
+    "models":{}
+}

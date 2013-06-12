@@ -1,0 +1,156 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"${apiBase}",
+    "resourcePath":"/triple",
+    "apis":[
+        {
+            "path" : "/triple",
+            "description" : "Creates a triple and returns its 'id'",
+            "operations" : [
+                {
+                    "errorResponses" : [
+                        {
+                            "code" : 400,
+                            "reason" : "Invalid Triple supplied"
+                        },
+                        {
+                            "code" : 404,
+                            "reason" : "Triple not stored"
+                        }
+                    ],
+                    "httpMethod" : "POST",
+                    "nickname" : "postTriple",
+                    "notes" : "NOT YET IMPLEMENTED",
+                    "parameters" : [
+                        {
+                            "allowMultiple" : false,
+                            "dataType" : "Triple",
+                            "description" : "Creates an RDF triple and returns the newly created id.",
+                            "paramType" : "body",
+                            "required" : true
+                        }
+                    ],
+                    "responseClass" : "string",
+                    "summary" : "Will create an RDF triple and returns its id"
+                }
+            ]
+        },
+        {
+            "path" : "/triple/{id}",
+            "description" : "Creates a triple and returns its 'id'",
+            "operations" : [
+                {
+                    "errorResponses" : [
+                        {
+                            "code" : 400,
+                            "reason" : "Invalid Triple supplied"
+                        },
+                        {
+                            "code" : 404,
+                            "reason" : "Triple not stored"
+                        }
+                    ],
+                    "httpMethod" : "PUT",
+                    "nickname" : "putTriple",
+                    "notes" : "NOT YET IMPLEMENTED",
+                    "parameters" : [
+                        {
+                            "allowMultiple" : false,
+                            "dataType" : "string",
+                            "description" : "The id number of the RDF triple to be updated",
+                            "name" : "id",
+                            "paramType" : "path",
+                            "required" : true
+                        },
+                        {
+                            "allowMultiple" : false,
+                            "dataType" : "Triple",
+                            "description" : "Updates an RDF triple based on id.",
+                            "paramType" : "body",
+                            "required" : true
+                        }
+                    ],
+                    "responseClass" : "string",
+                    "summary" : "Will update the RDF triple for a given id"
+                }
+            ]
+        },
+        {
+            "path" : "/triple/{id}",
+            "description" : "Operations on the triple 'id'",
+            "operations" : [
+                {
+                    "errorResponses" : [
+                        {
+                            "code" : 400,
+                            "reason" : "Invalid Triple Id supplied"
+                        },
+                        {
+                            "code" : 404,
+                            "reason" : "Triple not found"
+                        }
+                    ],
+                    "httpMethod" : "GET",
+                    "nickname" : "getTriple",
+                    "notes" : "NOT YET IMPLEMENTED",
+                    "parameters" : [
+                        {
+                            "allowMultiple" : false,
+                            "dataType" : "string",
+                            "description" : "The RDF triple to be fetched. Use 1 for testing.",
+                            "name" : "id",
+                            "paramType" : "path",
+                            "required" : true
+                        }
+                    ],
+                    "responseClass" : "Triple",
+                    "summary" : "Will return the stored triple information for the given id"
+                }
+            ]
+        },
+        {
+            "path" : "/triple/{id}",
+            "description" : "Deletes the triple for 'id'",
+            "operations" : [
+                {
+                    "errorResponses" : [
+                        {
+                            "code" : 400,
+                            "reason" : "Invalid Triple Id supplied"
+                        },
+                        {
+                            "code" : 404,
+                            "reason" : "Triple not found"
+                        }
+                    ],
+                    "httpMethod" : "DELETE",
+                    "nickname" : "deleteTriple",
+                    "notes" : "NOT YET IMPLEMENTED",
+                    "parameters" : [
+                        {
+                            "allowMultiple" : false,
+                            "dataType" : "string",
+                            "description" : "The RDF triple to be deleted. Use 1 for testing.",
+                            "name" : "id",
+                            "paramType" : "path",
+                            "required" : true
+                        }
+                    ],
+                    "responseClass" : "void",
+                    "summary" : "Will delete the stored triple information for the given id"
+                }
+            ]
+        }
+    ],
+    "models": {
+        "Triple": {
+            "id": "Triple",
+            "properties": {
+                "subject": {"type": "string"},
+                "object": {"type": "string"},
+                "predicate": {"type": "string"}
+            }
+        }
+    }
+}
