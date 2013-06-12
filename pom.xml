@@ -11,9 +11,10 @@
     <description/>
 
     <properties>
-        <timestamp>${maven.build.timestamp}</timestamp>
+        <apiBase>http://localhost:8080</apiBase>
+        <discovery.url>${apiBase}/api-docs.json</discovery.url>
         <maven.build.timestamp.format>yyy-MM-dd HH:mm</maven.build.timestamp.format>
-        <discovery.url>http://localhost:8080/api-docs.json</discovery.url>
+        <timestamp>${maven.build.timestamp}</timestamp>
     </properties>
 
     <dependencies>

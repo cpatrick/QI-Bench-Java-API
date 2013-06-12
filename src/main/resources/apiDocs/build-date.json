@@ -1,7 +1,7 @@
 {
     "apiVersion":"${pom.version}",
     "swaggerVersion":"1.1",
-    "basePath":"http://localhost:8080",
+    "basePath":"${apiBase}",
     "resourcePath":"/build-date",
     "apis":[
         {
