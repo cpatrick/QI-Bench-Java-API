@@ -1,0 +1,9 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"http://localhost:8080",
+    "apis":[
+        {"path":"/api-docs/build-date","description":"documents the build-date call"},
+        {"path":"/api-docs/version","description":"documents the version call"}
+    ]
+}

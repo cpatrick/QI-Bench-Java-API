@@ -124,7 +124,13 @@
                 <filtering>true</filtering>
                 <includes>
                     <include>REST.properties</include>
-                    <include>api-docs.json</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources/apiDocs</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>*.json</include>
                 </includes>
             </resource>
             <resource>
@@ -132,7 +138,13 @@
                 <filtering>true</filtering>
                 <excludes>
                     <exclude>REST.properties</exclude>
-                    <exclude>api-docs.json</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources/apiDocs</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>*.json</exclude>
                 </excludes>
             </resource>
         </resources>

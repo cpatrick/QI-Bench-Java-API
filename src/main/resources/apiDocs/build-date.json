@@ -1,0 +1,21 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"http://localhost:8080",
+    "resourcePath":"/build-date",
+    "apis":[
+        {
+            "path":"/build-date",
+            "description":"Returns the build date of the API",
+            "operations":[
+                {
+                    "httpMethod":"GET",
+                    "summary":"Returns the date that the API running on this server was built.",
+                    "responseClass":"void",
+                    "nickname":"getBuildDate"
+                }
+            ]
+        }
+    ],
+    "models":{}
+}

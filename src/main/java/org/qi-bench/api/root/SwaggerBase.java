@@ -42,7 +42,7 @@ public class SwaggerBase {
     final String LIB_SWAGGER_JS             = "lib/swagger.js";
     final String LIB_UNDERSCORE_MIN_JS      = "lib/underscore-min.js";
     final String SWAGGER_UI_JS              = "swagger-ui.js";
-    final String USER_JSON                  = "user.json";
+    final String SWAGGER_UI_MIN_JS          = "swagger-ui.min.js";
 
 
     public SwaggerBase() {
@@ -53,7 +53,7 @@ public class SwaggerBase {
     @Produces("application/json")
     public StreamingOutput SO_API_DOCS_JSON() {
         ServeStaticFile ssf = new ServeStaticFile();
-        return ssf.StaticFile(API_DOCS_JSON);
+        return ssf.StaticFile("apiDocs/api-docs.json");
     }
 
     @GET
@@ -188,11 +188,11 @@ public class SwaggerBase {
     }
 
     @GET
-    @Path(USER_JSON)
-    @Produces("application/json")
-    public StreamingOutput SO_USER() {
+    @Path(SWAGGER_UI_MIN_JS)
+    @Produces("text/javascript")
+    public StreamingOutput SO_SWAGGER_UI_MIN_JS() {
         ServeStaticFile ssf = new ServeStaticFile();
-        return ssf.StaticFile(USER_JSON);
+        return ssf.StaticFile(SWAGGER_UI_MIN_JS);
     }
 
 }

@@ -1,6 +1,6 @@
 package org.qi_bench.api.root;
 
-import org.qi_bench.api.domain.Customer;
+import org.qi_bench.api.domain.ServeStaticFile;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -10,6 +10,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.StreamingOutput;
 import javax.xml.parsers.DocumentBuilder;
@@ -23,7 +24,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Path("/build-date")
+@Path("/")
 public class BuildDateResource {
 
     public BuildDateResource() {
@@ -31,8 +32,9 @@ public class BuildDateResource {
 
         // Handle the version request. If there is an explicit request for JSON in an accept
         //  header then honor the request otherwise return XML as the default.
-   @GET
-   public StreamingOutput BuildDateXmlInterface(final @HeaderParam("accept") @DefaultValue("header") String HPValue) {
+    @GET
+    @Path("/build-date")
+    public StreamingOutput BuildDateXmlInterface(final @HeaderParam("accept") @DefaultValue("header") String HPValue) {
         if (HPValue.equals("application/json")) {   // The only way to get JSON is explicit request in an accept header
             return new StreamingOutput() {
                 public void write(OutputStream outputStream) throws IOException, WebApplicationException {
@@ -50,5 +52,13 @@ public class BuildDateResource {
             }
         };
    }
+
+    @GET
+    @Path("api-docs/build-date")
+    @Produces("application/json")
+    public StreamingOutput SO_API_DOCS_JSON() {
+        ServeStaticFile ssf = new ServeStaticFile();
+        return ssf.StaticFile("apiDocs/build-date.json");
+    }
 
 }

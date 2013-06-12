@@ -1,0 +1,21 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"http://localhost:8080",
+    "resourcePath":"/version",
+    "apis":[
+        {
+            "path":"/version",
+            "description":"Returns the version of the API",
+            "operations":[
+                {
+                    "httpMethod":"GET",
+                    "summary":"Returns the version of the API running on this server",
+                    "responseClass":"void",
+                    "nickname":"getVersion"
+                }
+            ]
+        }
+    ],
+    "models":{}
+}
