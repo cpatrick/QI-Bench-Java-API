@@ -13,6 +13,7 @@
     <properties>
         <timestamp>${maven.build.timestamp}</timestamp>
         <maven.build.timestamp.format>yyy-MM-dd HH:mm</maven.build.timestamp.format>
+        <discovery.url>http://localhost:8080/api-docs.json</discovery.url>
     </properties>
 
     <dependencies>
@@ -112,16 +113,27 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>2.5</version>
-                <configuration><encoding>UTF-8</encoding></configuration>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
             </plugin>
         </plugins>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
-<!-- 
-                <encoding>UTF-8</encoding>
- -->
+                <includes>
+                    <include>REST.properties</include>
+                    <include>api-docs.json</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>REST.properties</exclude>
+                    <exclude>api-docs.json</exclude>
+                </excludes>
             </resource>
         </resources>
     </build>

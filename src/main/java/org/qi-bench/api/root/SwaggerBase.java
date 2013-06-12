@@ -24,6 +24,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Path("/")
 public class SwaggerBase {
 
+    final String API_DOCS_JSON              = "api-docs.json";
     final String CSS_HIGHTLIGHT_DEFAULT_CSS = "css/hightlight.default.css";
     final String CSS_SCREEN_CSS             = "css/screen.css";
     final String IMAGES_LOGO_SMALL_PNG      = "images/logo_small.png";
@@ -41,9 +42,18 @@ public class SwaggerBase {
     final String LIB_SWAGGER_JS             = "lib/swagger.js";
     final String LIB_UNDERSCORE_MIN_JS      = "lib/underscore-min.js";
     final String SWAGGER_UI_JS              = "swagger-ui.js";
+    final String USER_JSON                  = "user.json";
 
 
     public SwaggerBase() {
+    }
+
+    @GET
+    @Path(API_DOCS_JSON)
+    @Produces("application/json")
+    public StreamingOutput SO_API_DOCS_JSON() {
+        ServeStaticFile ssf = new ServeStaticFile();
+        return ssf.StaticFile(API_DOCS_JSON);
     }
 
     @GET
@@ -175,6 +185,14 @@ public class SwaggerBase {
     public StreamingOutput SO_SWAGGER_UI_JS() {
         ServeStaticFile ssf = new ServeStaticFile();
         return ssf.StaticFile(SWAGGER_UI_JS);
+    }
+
+    @GET
+    @Path(USER_JSON)
+    @Produces("application/json")
+    public StreamingOutput SO_USER() {
+        ServeStaticFile ssf = new ServeStaticFile();
+        return ssf.StaticFile(USER_JSON);
     }
 
 }

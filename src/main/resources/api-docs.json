@@ -1,0 +1,8 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"http://localhost:8080",
+    "apis":[
+        {"path":"/user.json","description":"Fictitious user operations for testing Swagger"}
+    ]
+}

@@ -409,6 +409,7 @@ body #header a#logo {
     font-weight: bold;
     text-decoration: none;
     background: transparent url(../images/logo_small.png) no-repeat left center;
+    background-size: 35px 35px;
     padding: 20px 0 20px 40px;
     color: white;
 }
