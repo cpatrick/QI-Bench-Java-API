@@ -30,25 +30,25 @@ public class BuildDateResource {
     public BuildDateResource() {
     }
 
-        // Handle the version request. If there is an explicit request for JSON in an accept
-        //  header then honor the request otherwise return XML as the default.
+        // Handle the request. If there is an explicit request for XML in an accept
+        //  header then honor the request otherwise return JSON as the default.
     @GET
     @Path("/build-date")
-    public StreamingOutput BuildDateXmlInterface(final @HeaderParam("accept") @DefaultValue("header") String HPValue) {
-        if (HPValue.equals("application/json")) {   // The only way to get JSON is explicit request in an accept header
+    public StreamingOutput ResourceInterface(@HeaderParam("accept") @DefaultValue("application/json") String HPValue) {
+        if (HPValue.equals("application/xml")) {   // The only way to get XML is explicit request in an accept header
             return new StreamingOutput() {
                 public void write(OutputStream outputStream) throws IOException, WebApplicationException {
                     PrintStream writer = new PrintStream(outputStream);
-                    writer.println("{\"qi-bench-api\": { \"buildDate\": \"" + RESTproperties.buildDate + "\" }}");
+                    writer.println("<qi-bench-api>");
+                    writer.println("    <buildDate>" + RESTproperties.buildDate + "</buildDate>");
+                    writer.println("</qi-bench-api>");
                 }
             };
         }
         return new StreamingOutput() {
             public void write(OutputStream outputStream) throws IOException, WebApplicationException {
                 PrintStream writer = new PrintStream(outputStream);
-                writer.println("<qi-bench-api>");
-                writer.println("    <buildDate>" + RESTproperties.buildDate + "</buildDate>");
-                writer.println("</qi-bench-api>");
+                writer.println("{\"qi-bench-api\": { \"buildDate\": \"" + RESTproperties.buildDate + "\" }}");
             }
         };
    }

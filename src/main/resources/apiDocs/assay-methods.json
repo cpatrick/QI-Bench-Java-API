@@ -1,0 +1,22 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"${apiBase}",
+    "resourcePath":"/assay-methods",
+    "apis":[
+        {
+            "path":"/assay-methods",
+            "description":"Documents operations on a collection of assay-methods",
+            "operations":[
+                {
+                    "httpMethod":"GET",
+                    "summary":"Returns a list of at least some of the assay-methods collection.",
+                    "responseClass":"void",
+                    "nickname":"getAssayMethods",
+                    "notes": "NOT YET IMPLEMENTED"
+                }
+            ]
+        }
+    ],
+    "models":{}
+}

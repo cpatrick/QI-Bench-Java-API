@@ -1,0 +1,22 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"${apiBase}",
+    "resourcePath":"/biomarkers",
+    "apis":[
+        {
+            "path":"/biomarkers",
+            "description":"Documents operations on a collection of biomarkers",
+            "operations":[
+                {
+                    "httpMethod":"GET",
+                    "summary":"Returns a list of at least some of the biomarkers collection.",
+                    "responseClass":"void",
+                    "nickname":"getBiomarkers",
+                    "notes": "NOT YET IMPLEMENTED"
+                }
+            ]
+        }
+    ],
+    "models":{}
+}

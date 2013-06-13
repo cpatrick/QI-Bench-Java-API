@@ -1,0 +1,22 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"${apiBase}",
+    "resourcePath":"/workflows",
+    "apis":[
+        {
+            "path":"/workflows",
+            "description":"Documents operations on a collection of workflows",
+            "operations":[
+                {
+                    "httpMethod":"GET",
+                    "summary":"Returns a list of at least some of the workflows collection.",
+                    "responseClass":"void",
+                    "nickname":"getWorkflows",
+                    "notes": "NOT YET IMPLEMENTED"
+                }
+            ]
+        }
+    ],
+    "models":{}
+}

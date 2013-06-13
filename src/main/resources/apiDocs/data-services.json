@@ -1,0 +1,22 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"${apiBase}",
+    "resourcePath":"/data-services",
+    "apis":[
+        {
+            "path":"/data-services",
+            "description":"Documents operations on a collection of data-services",
+            "operations":[
+                {
+                    "httpMethod":"GET",
+                    "summary":"Returns a list of at least some of the data-services collection.",
+                    "responseClass":"void",
+                    "nickname":"getDataServices",
+                    "notes": "NOT YET IMPLEMENTED"
+                }
+            ]
+        }
+    ],
+    "models":{}
+}

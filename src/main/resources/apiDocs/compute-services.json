@@ -1,0 +1,22 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"${apiBase}",
+    "resourcePath":"/compute-services",
+    "apis":[
+        {
+            "path":"/compute-services",
+            "description":"Documents operations on a collection of compute-services",
+            "operations":[
+                {
+                    "httpMethod":"GET",
+                    "summary":"Returns a list of at least some of the compute-services collection.",
+                    "responseClass":"void",
+                    "nickname":"getComputeServices",
+                    "notes": "NOT YET IMPLEMENTED"
+                }
+            ]
+        }
+    ],
+    "models":{}
+}

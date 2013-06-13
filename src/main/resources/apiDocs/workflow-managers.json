@@ -1,0 +1,22 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"${apiBase}",
+    "resourcePath":"/workflow-managers",
+    "apis":[
+        {
+            "path":"/workflow-managers",
+            "description":"Documents operations on a collection of workflow-managers",
+            "operations":[
+                {
+                    "httpMethod":"GET",
+                    "summary":"Returns a list of at least some of the workflow-managers collection.",
+                    "responseClass":"void",
+                    "nickname":"getWorkflowManagers",
+                    "notes": "NOT YET IMPLEMENTED"
+                }
+            ]
+        }
+    ],
+    "models":{}
+}

@@ -1,0 +1,22 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"${apiBase}",
+    "resourcePath":"/investigations",
+    "apis":[
+        {
+            "path":"/investigations",
+            "description":"Documents operations on a collection of investigations",
+            "operations":[
+                {
+                    "httpMethod":"GET",
+                    "summary":"Returns a list of at least some of the investigations collection.",
+                    "responseClass":"void",
+                    "nickname":"getInvestigations",
+                    "notes": "NOT YET IMPLEMENTED"
+                }
+            ]
+        }
+    ],
+    "models":{}
+}

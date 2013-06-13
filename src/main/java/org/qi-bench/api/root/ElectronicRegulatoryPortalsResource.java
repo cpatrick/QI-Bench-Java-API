@@ -25,26 +25,22 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Path("/")
-public class TripleResource {
+public class ElectronicRegulatoryPortalsResource {
 
-    public TripleResource() {
+    public ElectronicRegulatoryPortalsResource() {
     }
 
         // Handle the request. If there is an explicit request for XML in an accept
         //  header then honor the request otherwise return JSON as the default.
     @GET
-    @Path("triple/{id}")
-    public StreamingOutput ResourceInterface(final @PathParam("id") int id,
-                                             @HeaderParam("accept") @DefaultValue("application/json") String HPValue) {
+    @Path("electronic-regulatory-portals")
+    public StreamingOutput ResourceInterface(@HeaderParam("accept") @DefaultValue("application/json") String HPValue) {
         if (HPValue.equals("application/xml")) {   // The only way to get XML is explicit request in an accept header
             return new StreamingOutput() {
                 public void write(OutputStream outputStream) throws IOException, WebApplicationException {
                     PrintStream writer = new PrintStream(outputStream);
                     writer.println("<qi-bench-api>");
-                    writer.println("    <triple>");
-                    writer.println("        <id>" + id + "</id>");
-                    writer.println("        <data>NOT YET IMPLEMENTED</data>");
-                    writer.println("    </triple>");
+                    writer.println("    <electronic-regulatory-portals>NOT YET IMPLEMENTED</electronic-regulatory-portals>");
                     writer.println("</qi-bench-api>");
                 }
             };
@@ -53,20 +49,18 @@ public class TripleResource {
             public void write(OutputStream outputStream) throws IOException, WebApplicationException {
                 PrintStream writer = new PrintStream(outputStream);
                 writer.println("{\"qi-bench-api\": " +
-                               "{\"triple\": {" +
-                               "\"id\": \"" + id + "\"," +
-                               "\"data\": \"NOT YET IMPLEMENTED\"" +
-                               "}}}");
+                               "{\"electronic-regulatory-portals\": \"NOT YET IMPLEMENTED\"" +
+                               "}}");
             }
         };
     }
 
     @GET
-    @Path("api-docs/triple")
+    @Path("api-docs/electronic-regulatory-portals")
     @Produces("application/json")
     public StreamingOutput SO_API_DOCS_JSON() {
         ServeStaticFile ssf = new ServeStaticFile();
-        return ssf.StaticFile("apiDocs/triple.json");
+        return ssf.StaticFile("apiDocs/electronic-regulatory-portals.json");
     }
 
 }

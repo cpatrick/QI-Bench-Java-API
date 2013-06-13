@@ -1,0 +1,22 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"${apiBase}",
+    "resourcePath":"/clinical-contexts",
+    "apis":[
+        {
+            "path":"/clinical-contexts",
+            "description":"Documents operations on a collection of clinical-contexts",
+            "operations":[
+                {
+                    "httpMethod":"GET",
+                    "summary":"Returns a list of at least some of the clinical-contexts collection.",
+                    "responseClass":"void",
+                    "nickname":"getClinicalContexts",
+                    "notes": "NOT YET IMPLEMENTED"
+                }
+            ]
+        }
+    ],
+    "models":{}
+}

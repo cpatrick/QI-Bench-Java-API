@@ -30,27 +30,27 @@ public class AssertionsResource {
     public AssertionsResource() {
     }
 
-        // Handle the version request. If there is an explicit request for JSON in an accept
-        //  header then honor the request otherwise return XML as the default.
+        // Handle the request. If there is an explicit request for XML in an accept
+        //  header then honor the request otherwise return JSON as the default.
     @GET
     @Path("assertions")
-    public StreamingOutput VersionXmlInterface(@DefaultValue("header") String HPValue) {
-        if (HPValue.equals("application/json")) {   // The only way to get JSON is explicit request in an accept header
+    public StreamingOutput ResourceInterface(@HeaderParam("accept") @DefaultValue("application/json") String HPValue) {
+        if (HPValue.equals("application/xml")) {   // The only way to get XML is explicit request in an accept header
             return new StreamingOutput() {
                 public void write(OutputStream outputStream) throws IOException, WebApplicationException {
                     PrintStream writer = new PrintStream(outputStream);
-                    writer.println("{\"qi-bench-api\": " +
-                                   "{\"assertions\": \"NOT YET IMPLEMENTED\"" +
-                                   "}}");
+                    writer.println("<qi-bench-api>");
+                    writer.println("    <assertions>NOT YET IMPLEMENTED</assertions>");
+                    writer.println("</qi-bench-api>");
                 }
             };
         }
         return new StreamingOutput() {
             public void write(OutputStream outputStream) throws IOException, WebApplicationException {
                 PrintStream writer = new PrintStream(outputStream);
-                writer.println("<qi-bench-api>");
-                writer.println("    <assertions>NOT YET IMPLEMENTED</assertions>");
-                writer.println("</qi-bench-api>");
+                writer.println("{\"qi-bench-api\": " +
+                               "{\"assertions\": \"NOT YET IMPLEMENTED\"" +
+                               "}}");
             }
         };
     }

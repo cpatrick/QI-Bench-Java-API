@@ -1,0 +1,22 @@
+{
+    "apiVersion":"${pom.version}",
+    "swaggerVersion":"1.1",
+    "basePath":"${apiBase}",
+    "resourcePath":"/regulatory-documents",
+    "apis":[
+        {
+            "path":"/regulatory-documents",
+            "description":"Documents operations on a collection of regulatory-documents",
+            "operations":[
+                {
+                    "httpMethod":"GET",
+                    "summary":"Returns a list of at least some of the regulatory-documents collection.",
+                    "responseClass":"void",
+                    "nickname":"getRegulatoryDocuments",
+                    "notes": "NOT YET IMPLEMENTED"
+                }
+            ]
+        }
+    ],
+    "models":{}
+}
