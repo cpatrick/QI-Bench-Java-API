@@ -13,7 +13,9 @@
     <properties>
         <apiBase>http://localhost:8080</apiBase>
         <discovery.url>${apiBase}/api-docs.json</discovery.url>
+	    <log4j.version>1.2.16</log4j.version>
         <maven.build.timestamp.format>yyy-MM-dd HH:mm</maven.build.timestamp.format>
+        <slf4j.version>1.6.4</slf4j.version>
         <timestamp>${maven.build.timestamp}</timestamp>
     </properties>
 
@@ -24,6 +26,11 @@
             <version>3.0-beta-5</version>
             <scope>provided</scope>
         </dependency>
+
+	    <!-- Logging: SL4J -> Log4j -->
+	
+	
+
 <!-- 
         <dependency>
             <groupId>com.wordnik</groupId>

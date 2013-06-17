@@ -2,24 +2,8 @@ package org.qi_bench.api.root;
 
 import org.qi_bench.api.domain.ServeStaticFile;
 import org.qi_bench.api.domain.ServeImage;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintStream;
-import java.net.URI;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Path("/")
 public class SwaggerBase {
