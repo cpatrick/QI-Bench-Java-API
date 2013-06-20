@@ -25,6 +25,7 @@ public class SwaggerBase {
     final String LIB_JQUERY_WIGGLE_MIN_JS   = "lib/jquery.wiggle.min.js";
     final String LIB_SWAGGER_JS             = "lib/swagger.js";
     final String LIB_UNDERSCORE_MIN_JS      = "lib/underscore-min.js";
+    final String QIBENCH_OVERVIEW_JS        = "qibench-overview.js";
     final String SWAGGER_UI_JS              = "swagger-ui.js";
     final String SWAGGER_UI_MIN_JS          = "swagger-ui.min.js";
 
@@ -161,6 +162,14 @@ public class SwaggerBase {
     public StreamingOutput SO_LIB_UNDERSCORE_MIN_JS() {
         ServeStaticFile ssf = new ServeStaticFile();
         return ssf.StaticFile(LIB_UNDERSCORE_MIN_JS);
+    }
+
+    @GET
+    @Path(QIBENCH_OVERVIEW_JS)
+    @Produces("text/javascript")
+    public StreamingOutput SO_QIBENCH_OVERVIEW_JS() {
+        ServeStaticFile ssf = new ServeStaticFile();
+        return ssf.StaticFile(QIBENCH_OVERVIEW_JS);
     }
 
     @GET
