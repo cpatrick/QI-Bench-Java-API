@@ -8,6 +8,7 @@ System Assumptions:
 - Maven 2.0.9 or higher
 - JBoss AS 7.1.1 or higher running standalone.
 - RESTEasy will be pulled in during the build process.
+- The path /projects/qibenchStore/ exists and is writable by the JBoss proces.
 
 System preparations:
 =====================
@@ -24,6 +25,8 @@ System preparations:
      default "Welcome to JBoss" screen.
 2. This step intentionally left blank
    (Take a bio-break or get something to require one later.)
+3. If /projects/qibenchStore/ does not exist, create it and ensure it is writable by
+   the JBoss process.
 
 Building the project:
 ====================
