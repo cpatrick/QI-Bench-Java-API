@@ -13,10 +13,16 @@
     <properties>
         <apiBase>http://localhost:8080</apiBase>
         <discovery.url>${apiBase}/api-docs.json</discovery.url>
-	    <log4j.version>1.2.16</log4j.version>
+        <log4j.version>1.2.16</log4j.version>
         <maven.build.timestamp.format>yyy-MM-dd HH:mm</maven.build.timestamp.format>
         <slf4j.version>1.6.4</slf4j.version>
         <timestamp>${maven.build.timestamp}</timestamp>
+
+        <jena.version>2.7.4</jena.version>
+        <arq.version>2.9.4</arq.version>
+        <tdb.version>0.9.4</tdb.version>
+        <larq.version>1.0.0-incubating</larq.version>
+        <iri.version>0.9.4</iri.version>
     </properties>
 
     <dependencies>
@@ -27,18 +33,34 @@
             <scope>provided</scope>
         </dependency>
 
-	    <!-- Logging: SL4J -> Log4j -->
-	
-	
-
-<!-- 
+        <!-- Not strictly necessary, but provides Jena sources in my IDE! -->
         <dependency>
-            <groupId>com.wordnik</groupId>
-            <artifactId>swagger-jaxrs_2.9.1</artifactId>
-            <version>1.2.1</version>
-            <scope>compile</scope>
+          <groupId>org.apache.jena</groupId>
+          <artifactId>jena-core</artifactId>
+          <version>${jena.version}</version>
         </dependency>
- -->
+        <dependency>
+          <groupId>org.apache.jena</groupId>
+          <artifactId>jena-iri</artifactId>
+          <version>${iri.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.jena</groupId>
+          <artifactId>jena-arq</artifactId>
+          <version>${arq.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.jena</groupId>
+          <artifactId>jena-tdb</artifactId>
+          <version>${tdb.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.jena</groupId>
+          <artifactId>jena-larq</artifactId>
+          <version>${larq.version}</version>
+        </dependency>
+
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

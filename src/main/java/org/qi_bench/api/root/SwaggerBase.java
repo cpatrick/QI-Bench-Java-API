@@ -10,6 +10,7 @@ public class SwaggerBase {
 
     final String API_DOCS_JSON              = "api-docs.json";
     final String CSS_HIGHTLIGHT_DEFAULT_CSS = "css/hightlight.default.css";
+    final String CSS_QIBENCH_CSS            = "css/qibench.css";
     final String CSS_SCREEN_CSS             = "css/screen.css";
     final String IMAGES_LOGO_SMALL_PNG      = "images/logo_small.png";
     final String IMAGES_PET_STORE_API_PNG   = "images/pet_store_api.png";
@@ -47,6 +48,14 @@ public class SwaggerBase {
     public StreamingOutput SO_CSS_HIGHTLIGHT_DEFAULT_CSS() {
         ServeStaticFile ssf = new ServeStaticFile();
         return ssf.StaticFile(CSS_HIGHTLIGHT_DEFAULT_CSS);
+    }
+
+    @GET
+    @Path(CSS_QIBENCH_CSS)
+    @Produces("text/css")
+    public StreamingOutput SO_CSS_QIBENCH_CSS() {
+        ServeStaticFile ssf = new ServeStaticFile();
+        return ssf.StaticFile(CSS_QIBENCH_CSS);
     }
 
     @GET

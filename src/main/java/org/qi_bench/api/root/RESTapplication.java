@@ -1,5 +1,6 @@
 package org.qi_bench.api.root;
 
+import org.qi_bench.jena.TripleDisplay;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.util.HashSet;
@@ -26,6 +27,7 @@ public class RESTapplication extends Application {
       singletons.add(new QueriesResource());
       singletons.add(new RegulatoryDocumentsResource());
       singletons.add(new SwaggerBase());
+      singletons.add(new TripleDisplay());
       singletons.add(new TripleResource());
       singletons.add(new TriplesResource());
       singletons.add(new VersionResource());

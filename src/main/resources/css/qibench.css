@@ -1,0 +1,59 @@
+html {
+    background-color: white;
+}
+
+body {
+    margin: auto auto;
+    padding-left: 6%;
+    padding-right: 6%;
+    background-color: white;
+    color: #11111A;
+    font-family: Helvetica, "Trebuchet MS", Arial, sans-serif;
+    font-size: 1.1em;
+    line-height: 130%;
+}
+
+#main {
+    border-bottom: 0;
+    border-top: 0;
+    background-color: white;
+    margin: 0;
+    padding: 15px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+span.NS {
+    color: saddlebrown;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+span.LN {
+    color: #003030;
+    font-weight: bold;
+}
+
+div.triple0 {
+    border: 1px;
+    border-color: gray;
+    border-style: dotted;
+    margin-top: 12px;
+    font-family: 'courier new',courier,serif;
+}
+
+div.triple {
+    margin-bottom: 12px;
+    background-color: khaki;
+    font-family: 'courier new',courier,serif;
+}
+
+div.predicate {
+    background-color: lightgoldenrodyellow;
+    margin-left: 25px;
+}
+
+div.object {
+    background-color: linen;
+    margin-left: 25px;
+}

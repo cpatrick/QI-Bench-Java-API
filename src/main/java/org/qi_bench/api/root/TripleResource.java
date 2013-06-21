@@ -1,6 +1,8 @@
 package org.qi_bench.api.root;
 
-import org.qi_bench.api.domain.ServeStaticFile;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
@@ -9,9 +11,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.StreamingOutput;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
+import org.qi_bench.api.domain.ServeStaticFile;
 
 @Path("/")
 public class TripleResource {
