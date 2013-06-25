@@ -18,6 +18,7 @@ public class RESTapplication extends Application {
       singletons.add(new ClinicalContextsResource());
       singletons.add(new ComputeServicesResource());
       singletons.add(new DataServicesResource());
+      singletons.add(new DataSetsResource());
       singletons.add(new ElectronicRegulatoryPortalsResource());
       singletons.add(new HypothesesResource());
       singletons.add(new InstancesResource());

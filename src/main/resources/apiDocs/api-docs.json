@@ -19,6 +19,7 @@
         {"path": "/api-docs/investigations",                "description": "documents the operations on a collection of investigations"},
         {"path": "/api-docs/queries",                       "description": "documents the operations on a collection of queries"},
         {"path": "/api-docs/data-services",                 "description": "documents the operations on a collection of data-services"},
+        {"path": "/api-docs/data-sets",                     "description": "documents the operations on a collection of data-sets"},
         {"path": "/api-docs/workflow-managers",             "description": "documents the operations on a collection of workflow-managers"},
         {"path": "/api-docs/compute-services",              "description": "documents the operations on a collection of compute-services"},
         {"path": "/api-docs/regulatory-documents",          "description": "documents the operations on a collection of regulatory-documents"},

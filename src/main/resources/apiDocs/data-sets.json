@@ -2,17 +2,17 @@
     "apiVersion":"${pom.version}",
     "swaggerVersion":"1.1",
     "basePath":"${apiBase}",
-    "resourcePath":"/data-services",
+    "resourcePath":"/data-sets",
     "apis":[
         {
-            "path":"/data-services",
+            "path":"/data-sets",
             "description":"Documents operations on a collection of data-services",
             "operations":[
                 {
                     "httpMethod":"GET",
-                    "summary":"Returns a list of at least some of the data-services collection.",
+                    "summary":"Returns a list of at least some of the data sets",
                     "responseClass":"void",
-                    "nickname":"getDataServices",
+                    "nickname":"getDataSets",
                     "notes": "NOT YET IMPLEMENTED"
                 }
             ]
